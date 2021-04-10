@@ -1,5 +1,6 @@
 package com.iss.customexception.controller;
 
+import com.iss.customexception.Exception.ApiRequestException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @GetMapping("/getMessage")
     public String getMessage(){
-        return "Hello world";
+        throw new ApiRequestException("oops cannot get message");
     }
 
 }
